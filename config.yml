@@ -1,6 +1,6 @@
-baseURL: "https://www.dennysinaga.com/"
+baseURL: "www.dennysinaga.com"
 languageCode: en-us
-title: Denny Abraham Sinaga
+title: Blog - Denny Abraham Sinaga
 theme: PaperMod
 
 enableEmoji: true

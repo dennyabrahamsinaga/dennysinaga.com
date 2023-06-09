@@ -1,16 +1,45 @@
 baseURL: "www.dennysinaga.com"
-languageCode: en-us
 title: Blog - Denny Abraham Sinaga
 theme: PaperMod
 
+enableRobotsTXT: true
 enableEmoji: true
 
 params:
+  title: Denny Abraham Sinaga
+  description: "Portfolio by Denny Abraham Sinaga"
+  keywords: [Portfolio]
   author: Denny Abraham Sinaga
+
+# profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: Denny Abraham Sinaga
+    subtitle: "seeking opportunities and building expertise in the field of cybersecurity."
+    imageUrl: "https://avatars.githubusercontent.com/u/62960949"
+    imageWidth: 200
+    imageHeight: 200
+    imageTitle: Denny Abraham Sinaga
+    buttons:
+      - name: Read More
+        url: about
+  
+ socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/dennyabrahamsinaga"
+    - name: github
+      url: "https://github.com/dennyabrahamsinaga"
+    - name: email
+      url: "mailto:abrahamsinagadenny@gmail.com"
 
 menu:
   main:
+    - identifier: profile
+      name: about
+      url: /about/
+      weight: 10
     - identifier: blog
       name: blog
       url: /blog/
+      weight: 20
 

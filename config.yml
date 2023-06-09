@@ -11,23 +11,23 @@ params:
   keywords: [Portfolio]
   author: Denny Abraham Sinaga
 
-# profile-mode
-  profileMode:
-    enabled: true # needs to be explicitly set
-    title: Denny Abraham Sinaga
-    subtitle: "seeking opportunities and building expertise in the field of cybersecurity."
-    imageUrl: "https://avatars.githubusercontent.com/u/62960949"
-    imageWidth: 200
-    imageHeight: 200
-    imageTitle: Denny Abraham Sinaga
+# # profile-mode
+#   profileMode:
+#     enabled: true # needs to be explicitly set
+#     title: Denny Abraham Sinaga
+#     subtitle: "seeking opportunities and building expertise in the field of cybersecurity."
+#     imageUrl: "https://avatars.githubusercontent.com/u/62960949"
+#     imageWidth: 200
+#     imageHeight: 200
+#     imageTitle: Denny Abraham Sinaga
   
- socialIcons:
-    - name: linkedin
-      url: "https://www.linkedin.com/in/dennyabrahamsinaga"
-    - name: github
-      url: "https://github.com/dennyabrahamsinaga"
-    - name: email
-      url: "mailto:abrahamsinagadenny@gmail.com"
+#  socialIcons:
+#     - name: linkedin
+#       url: "https://www.linkedin.com/in/dennyabrahamsinaga"
+#     - name: github
+#       url: "https://github.com/dennyabrahamsinaga"
+#     - name: email
+#       url: "mailto:abrahamsinagadenny@gmail.com"
 
 menu:
   main:

@@ -1,4 +1,16 @@
-baseURL: 
+baseURL: "https://www.dennysinaga.com/"
 languageCode: en-us
 title: Denny Abraham Sinaga
 theme: PaperMod
+
+enableEmoji: true
+
+params:
+  author: Denny Abraham Sinaga
+
+menu:
+  main:
+    - identifier: blog
+      name: blog
+      url: /blog/
+  

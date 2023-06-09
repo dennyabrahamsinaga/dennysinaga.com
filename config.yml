@@ -20,9 +20,6 @@ params:
     imageWidth: 200
     imageHeight: 200
     imageTitle: Denny Abraham Sinaga
-    buttons:
-      - name: Read More
-        url: about
   
  socialIcons:
     - name: linkedin

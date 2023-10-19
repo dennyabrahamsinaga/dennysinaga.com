@@ -7,7 +7,7 @@ enableEmoji: true
 
 params:
   title: Denny Abraham Sinaga
-  description: "Portfolio by Denny Abraham Sinaga"
+  description: "i write random stuffs here, please read it"
   keywords: [Portfolio]
   author: Denny Abraham Sinaga
 
@@ -20,14 +20,17 @@ params:
     imageWidth: 200
     imageHeight: 200
     imageTitle: Denny Abraham Sinaga
+    buttons:
+      - name: about
+        url: "/about"
+      - name: blog
+        url: "/blog"
   
-# socialIcons:
-#   - name: linkedin
-#       url: "https://www.linkedin.com/in/dennyabrahamsinaga"
-#   - name: github
-#       url: "https://github.com/dennyabrahamsinaga"
-#   - name: email
-#       url: "mailto:abrahamsinagadenny@gmail.com"
+  socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/dennyabrahamsinaga"
+    - name: github
+      url: "https://github.com/dennyabrahamsinaga"
 
 menu:
   main:

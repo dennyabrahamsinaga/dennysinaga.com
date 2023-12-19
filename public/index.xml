@@ -43,10 +43,10 @@ By decoding the message from the image, I obtained a result like this:</descript
     
     <item>
       <title>About</title>
-      <link>www.dennysinaga.com/about/</link>
+      <link>www.dennysinaga.com/whoami/</link>
       <pubDate>Sun, 11 Jun 2023 20:27:33 +0700</pubDate>
       
-      <guid>www.dennysinaga.com/about/</guid>
+      <guid>www.dennysinaga.com/whoami/</guid>
       <description>Denny is a reliable and conscientious individual who has graduated with a major in Software Engineering Technology. He is passionate about continuously enhancing his technical and interpersonal skills. Denny has a particular interest in Web and Mobile Penetration Testing and has actively sought opportunities to expand his knowledge and hands-on experience in the field of cybersecurity, including participation in Capture The Flag (CTF) competitions.
 You can check my projects on Github.</description>
     </item>

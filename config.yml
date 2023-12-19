@@ -40,9 +40,9 @@ params:
 
 menu:
   main:
-    - identifier: profile
-      name: about
-      url: /about/
+    - identifier: about
+      name: whoami
+      url: /whoami/
       weight: 10
     - identifier: blog
       name: blog

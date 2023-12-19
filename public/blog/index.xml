@@ -5,7 +5,17 @@
     <link>www.dennysinaga.com/blog/</link>
     <description>Recent content in Blogs on nagabonor@denny</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 Dec 2023 11:34:01 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Dec 2023 14:28:17 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CTF - Lokal] CTF SecureTheSystem 2023</title>
+      <link>www.dennysinaga.com/blog/ctf-securethesystem-2023/</link>
+      <pubDate>Tue, 19 Dec 2023 14:28:17 +0700</pubDate>
+      
+      <guid>www.dennysinaga.com/blog/ctf-securethesystem-2023/</guid>
+      <description>CTF Secur{i}e The System 2023 This post will be written in Bahasa Indonesia.
+Forensic keylogger  So, here&amp;rsquo;s the thing. I just came to the Internet caffee (warnet) and after several minutes using the computer, I found a strange process running in the backround. Then i found out it was a keylogger. Luckily I can stop the process and don&amp;rsquo;t let the attacker get this keylogger file. Because i just logged in to my server before.</description>
+    </item>
+    
     <item>
       <title>[CTF] The Cyber Cooperative CTF 2023</title>
       <link>www.dennysinaga.com/blog/the-cybercooperative-ctf-2023/</link>

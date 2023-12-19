@@ -1,5 +1,5 @@
 ---
-title: "Pointer Overflow CTF 2023"
+title: "[CTF] Pointer Overflow CTF 2023"
 date: 2023-12-19T19:50:12+07:00
 draft: false
 ---
@@ -12,34 +12,33 @@ draft: false
 
 > Here's a password protected archive. Problem is that I seem to have forgotten das Passwort. All I have is this post-it note on my monitor that says "crack2 = 4bd939ed2e01ed1e8540ed137763d73cd8590323"
 
-In this challenge, we were provided with crack2.7z file. You can download it [here](https://uwspedu-my.sharepoint.com/personal/cjohnson_uwsp_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fcjohnson_uwsp_edu%2FDocuments%2FPOCTF%2FPO%20CTF%202023%2FCrack%202%20-%20The%20Gentle%20Rocking%20of%20the%20Sun%2Fcrack2%2E7z&parent=%2Fpersonal%2Fcjohnson_uwsp_edu%2FDocuments%2FPOCTF%2FPO%20CTF%202023%2FCrack%202%20-%20The%20Gentle%20Rocking%20of%20the%20Sun&ga=1)
+In this challenge, we were provided with a `crack2.7z` file. You can download it [here](https://uwspedu-my.sharepoint.com/personal/cjohnson_uwsp_edu/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fcjohnson_uwsp_edu%2FDocuments%2FPOCTF%2FPO%20CTF%202023%2FCrack%202%20-%20The%20Gentle%20Rocking%20of%20the%20Sun%2Fcrack2%2E7z&parent=%2Fpersonal%2Fcjohnson_uwsp_edu%2FDocuments%2FPOCTF%2FPO%20CTF%202023%2FCrack%202%20-%20The%20Gentle%20Rocking%20of%20the%20Sun&ga=1).
 
 To solve this challenge, we should find the password of this archive file.
-In the description, it was said `"crack2 = 4bd939ed2e01ed1e8540ed137763d73cd8590323"`
+In the description, it was said `"crack2 = 4bd939ed2e01ed1e8540ed137763d73cd8590323"`.
 
-So, we need analyze this string. We can use online tools or cli-tools. 
-In this case, I am using [Haiti](https://noraj.github.io/haiti/#/) using this command:
+So, we need to analyze this string. We can use online tools or cli-tools. 
+In this case, I use [Haiti](https://noraj.github.io/haiti/#/) with this command:
 
 `haiti 4bd939ed2e01ed1e8540ed137763d73cd8590323`
 
-The output produced by the command above is:
+The output of the above command is:
 
 ![result-haiti](https://i.ibb.co/v4wdSmy/image.png)
 
-As you can see, the hash was recognized as SHA-1. Then, using this [online tools](https://md5decrypt.net/en/Sha1/#answerHash), I got the password: zwischen
+As you can see, the hash was recognised as SHA-1. Then, using this [online tools](https://md5decrypt.net/en/Sha1/#answerHash), I got the password: zwischen
 
-Now, we can extract this file using this command:
+Now we can extract this file using this command:
 
 `7z x crack2.7z -pzwischen`
 
-The command aboce will extract the file using password: zwischen.
+The above command extracts the file with the password: zwischen.
 
-Upon extracting the file, we will find 25 directories that seems a part of the flag. You can see the image below:
+After extracting the file, we find 25 directories that seem to be part of the flag. You can see the image below:
 
 ![tree-2023](https://i.ibb.co/fqRZrDG/image.png)
 
-The flag format is `poctf{}`, hence the final flag is:
-poctf{uwsp_c411f02n14_d234m1n9}
+The flag format is `poctf{}`, so the final flag is: poctf{uwsp_c411f02n14_d234m1n9}
 
 ## Crypto
 
@@ -49,17 +48,17 @@ poctf{uwsp_c411f02n14_d234m1n9}
 >
 > cG9jdGZ7dXdzcF80MTFfeTB1Ml84NDUzXzQyM184MzEwbjlfNzBfdTV9
 
-It's just a simple base64 encoded strings. You can decode it using this command:
+It's just a simple base64 encoded string. You can decode it with this command:
 
 `echo "cG9jdGZ7dXdzcF80MTFfeTB1Ml84NDUzXzQyM184MzEwbjlfNzBfdTV9" | base64 -d`
 
 poctf{uwsp_411_y0u2_8453_423_8310n9_70_u5}
 
-Well, you can identify this string using both these tools:
+Well, you can identify this string using both these two tools:
 - Cipher Identifier by [dcode.fr](https://www.dcode.fr/cipher-identifier)
 - [CyberChef](https://gchq.github.io/CyberChef)
 
-If you know other great tools, please let met know <3
+If you know of any other great tools, please let met know <3
 
 ### Missing and Missed
 
@@ -67,25 +66,26 @@ If you know other great tools, please let met know <3
 > 
 > ++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>++++++++++++.-.------------.+++++++++++++++++.--------------.+++++++++++++++++++++.------.++.----.---.-----------------.<<++++++++++++++++++++.-.++++++++.>>+++++++++.<<--.>>---------.++++++++++++++++++++++++.<<-----.--.>>---------.<<+++++++++.>>---------------.<<---------.++.>>.+++++++.<<--.++.+++++++.---------.+++++++..----.>>++++++++.+++++++++++++++.
 
-We were given set of symbols or likely set of instructions.
-To solve this challenge, we should analyze what is this. Since it's a cryptography challenge then it must be related to a cipher.
-We can utilize [this](https://www.dcode.fr/cipher-identifier) website to identify the cipher.
+We have been given a set of symbols or probably a set of instructions.
+To solve this challenge, we should analyse what it is. 
+Since it's a cryptography challenge, it must be related to a cipher.
+We can use [this](https://www.dcode.fr/cipher-identifier) website to identify the cipher.
 
 Paste it and then click Analyze.
 
 ![cipher-identifier-suggestion](https://i.ibb.co/mHLKm2f/image.png)
 
-It asked us to investigate the Brainfuck. Click on Brainfuck, paste it, and click Execute.
+It asked us to investigate the Brainfuck. Click on Brainfuck, paste it, and click on Execute.
  
-In the results section, you will see the flag.
+In the results section you will see the flag.
 
 ![flag-missingandmissed](https://i.ibb.co/FJfvX93/image.png)
 
 poctf{uwsp_219h7_w20n9_02_f0290773n}
 
-Well, I found out that there is a hint in the description of this challenge. 
+Well, I found out that there was a clue in the description of this challenge. 
 It was "cerebral", so I thought it was related or associated with a "brain" cipher. 
-Upon further investigation, I discovered that it is linked to Brainfuck, a specific type of cipher.
+Upon further investigation, I discovered that it was related to Brainfuck, a specific type of cipher.
 > A little __cerebral__ fornication to round out the crypto challenges.
 
 ## Forensics
@@ -96,16 +96,14 @@ Upon further investigation, I discovered that it is linked to Brainfuck, a speci
 
 We were provided with a `DF1.pdf` file. You can download it [here](https://uwspedu-my.sharepoint.com/personal/cjohnson_uwsp_edu/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fcjohnson_uwsp_edu%2FDocuments%2FPOCTF%2FPO%20CTF%202023%2FDF%201%20-%20If%20You%20Don%27t%20Remember%20Me).
 
-To solve this challenge, I utilize strings command as below:
+To solve this challenge, I use the strings command as shown below:
 
 `strings DF1.pdf`
 
 If you scroll down, you will find a string like this:
 poctf(uwsp_77333163306D335F37305F3768335F39346D33}
 
-Based on the description, it was stated "This is a two-step flag as you will find it partially encoded.", hence we could utilize CyberChef to find the partially encoded string which is `77333163306D335F37305F3768335F39346D33`. 
-It turns out it's encoded in hex.
-
+Based on the description, it was stated "This is a two-step flag as you will find it partially encoded.", so we could use CyberChef to find the partially encoded string which is `77333163306D335F37305F3768335F39346D33`. 
 It turns out it's encoded in hex, and the decoded string is `w31c0m3_70_7h3_94m3`.
 The final flag is poctf(uwsp_w31c0m3_70_7h3_94m3}
  
@@ -113,10 +111,10 @@ The final flag is poctf(uwsp_w31c0m3_70_7h3_94m3}
 
 > Here is a very interesting image. The flag has been broken up into several parts and embedded within it, so it will take a variety of skills to assemble it.
 
-We were provided with a `DF2.jpg` file.
-You can download the image file [here](https://uwspedu-my.sharepoint.com/personal/cjohnson_uwsp_edu/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fcjohnson_uwsp_edu%2FDocuments%2FPOCTF%2FPO%20CTF%202023%2FDF%202%20-%20A%20Petty%20Wage%20in%20Regret)
+We were given a `DF2.jpg` file.
+You can download the image file [here](https://uwspedu-my.sharepoint.com/personal/cjohnson_uwsp_edu/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fcjohnson_uwsp_edu%2FDocuments%2FPOCTF%2FPO%20CTF%202023%2FDF%202%20-%20A%20Petty%20Wage%20in%20Regret).
 
-To solve this challenge, I utilize exiftool and strings command.
+To solve this challenge, I use exiftool and strings command.
 
 `exiftool DF2.jpg`
 
@@ -217,26 +215,27 @@ Megapixels                      : 1.0
 Thumbnail Image                 : (Binary data 7000 bytes, use -b option to extract)
 ```
 
-In the provided output, there is an encoded string within the `User Comment: 3A3A50312F323A3A20706F6374667B757773705F3768335F7730726C645F683464`. 
-To decode this string, I am using CyberChef and we get the output as `::P1/2:: poctf{uwsp_7h3_w0rld_h4d`
+In the output provided, there is an encoded string within the `User Comment: 3A3A50312F323A3A20706F6374667B757773705F3768335F7730726C645F683464`. 
+To decode this string, I use CyberChef and we get the output as `::P1/2:: poctf{uwsp_7h3_w0rld_h4d`
 
-This marks the first part of our flag. 
-The challenge's description indicated that "The flag has been broken up into several parts and embedded within it,...". As a result, we can use binwalk to check if any files are embedded in this image file. 
+This is the first part of our flag. 
+The challenge description said: "The flag has been broken up into several parts and embedded within it,...". 
+So, we can use binwalk to check if there are any files embedded in this image file. 
 
 `binwalk -e DF2.jpg`
 
 ![binwalk-res](https://i.ibb.co/t843Hms/image.png)
 
-It turns out there are embedded files in there, and it's also another JPEG file.
+It turns out that there are embedded files in it, and it's another JPEG file.
 
-Upon further investigations, I found out there's a text inside of embedded image file. 
-Using Photopea, the result is:
+Upon further investigation, I found that there's text inside an embedded image file. 
+Using Photopea, this is the result:
 
 ![photopea-result](https://i.ibb.co/4pZcZ5r/image.png)
 
-In the image above, it appears the second part of the flag is: `::P2/2:17_f1257`
+In the image above, it appears the second part of the flag appears as: `::P2/2:17_f1257`
 
-After collecting all the parts, we can now assemble the flag. The final flag is poctf{uwsp_7h3_w0rld_h4d_17_f1257}
+After collecting all the parts, we can now put the flag together. The final flag is poctf{uwsp_7h3_w0rld_h4d_17_f1257}
 
 ## Misc
 
@@ -248,7 +247,7 @@ We were provided with a `misc2.pdf` file.
 
 ![misc2-img](https://i.ibb.co/qrc6bKb/image.png)
 
-To solve this challenge, I only use Paint to draw the path.
+To solve this challenge, I use only Paint to draw the path.
 
 ![paint-path](https://i.ibb.co/R2rQWJG/image.png)
 
@@ -260,54 +259,54 @@ The final flag is poctf{uwsp_pr377y_bu7_p377y_bu7_pr377y}
 
 > The flag is known to only one person, who is a trusted confidant of your first subject. It' s unknown how or why the two know each other, but your task will be to find the flag by finding subject 2 through subject 1. All we know about subject 1 is this information: @free_jack_marigold@mastodon.social
 
-Using information on description of this challenge, we can start analyze the first subject.
-The provided information was @free_jack_marigold@mastodon.social, prompting us to locate a user with the username 'free_jack' on mastodon.social.
+Using the information on description of this challenge, we can begin to analyse the first subject.
+The information provided was @free_jack_marigold@mastodon.social, which prompted us to locate a user with the username 'free_jack' on mastodon.social.
 
 ![mastodon-result](https://i.ibb.co/vxfzjpQ/image.png)
 
-There is only one user has its username with his name as `hijackbrickabrak`. The details of this user as below:
+There is only one user who has his username as `hijackbrickabrak`. The details for this user are as follows:
 
 ![mastodon-detals](https://i.ibb.co/KwLQQpQ/image.png)
 
-As we can see in the image above, we collect lots of information such as:
+As you can see in the image above, we collect a lot of information such as:
 - He joined on Jun 01, 2023.
 - He has social media with username as `@jock_bronson`.
 - He has 2 posts.
 - He has 9 following.
 
-When I clicked the Posts and Following text, it turns out that it returned "No posts here" and "This user doesn't follow anyone yet.". 
-Subsequently, with additional information, we can search for any details related to this user, `@jock_bronson`.
+When I clicked on the Posts and Following text, it turned out to say "No posts here" and "This user doesn't follow anyone yet.". 
+Then, with additional information, we can search for any details related to this user, `@jock_bronson`.
 
-We discovered something intriguing: there is a Twitter user with that username.
+We discovered something interesting: there is a Twitter user with that this username.
 
 ![twitter-jock](https://i.ibb.co/58zmQnz/image.png)
 
-Upon visiting his profile, we collect some information:
-- He has name as big_ole_ramen.
+When visiting his profile, we collect some information:
+- He has the name big_ole_ramen.
 - He has 25 followings.
 - He has 6 followers.
-- He is a student at UWSP where study cybersecurity.
+- He is a student at UWSP where he studies Cybersecurity.
 
-Upon exploring his tweets, I found nothing. Then, I began exploring his followers.
+When I searched his tweets, I found nothing. Then, I started looking at his followers.
 
 ![list-of-followers](https://i.ibb.co/MGJJsGn/image.png)
 
-In the list of his followers, there is a user named `Definitely NOT Montezuma Cloverfield` that caught my attention because his bio is written "I am secret". 
-So, I clicked his profile and we got some information:
+In the list of his followers, there is one user called `Definitely NOT Montezuma Cloverfield` who caught my eye because his bio says "I am secret". 
+So, I clicked on his profile and we got some information:
 - His username is @MontezumaClove1.
-- He joined on November 2020.
+- He joined in November 2020.
 - He has 2 followings.
 - He has 2 followers.
 
-I found a tweets that looks interesting.
+I found a tweet that looks interesting.
 
 ![interesting-tweets](https://i.ibb.co/SrvX753/image.png)
 
-It was indicated that his previous name was jock_bronson. 
-So, I am now fairly certain that @MontezumaClove1 and jock_bronson's user are the same person.
+It indicated that his former was jock_bronson. 
+So, I am now pretty sure that @MontezumaClove1 and jock_bronson's user are the same person. 
 
-Hence, it implies that we are stuck on the first subject when we should be searching for the flag through the second subject. 
-So, I started looking at his followers and found a user named `Senor Spacecakes`. 
+This means that we are stuck on the first subject when we should be looking for the flag through the second subject. 
+So, I started looking at his followers and found a user called `Senor Spacecakes`. 
 
 ![montezuma-followers](https://i.ibb.co/Bf3ybCd/image.png)
 
@@ -315,17 +314,17 @@ Next, I clicked on his profile and gathered some information:
 - His username is @SenorSpacecakes.
 - He has 32 followings.
 - He has 2 followers.
-- He has instagram account with @senorspacecakes.
-- He has no posts that looks interesting (for flag).
+- He has an instagram account with @senorspacecakes.
+- He has no posts that look interesting (for flag).
 
 After searching for his tweets, we didn't find anything interesting except for his Instagram profile. 
-Upon visiting his profile, we discovered the flag in one of his [posts](https://www.instagram.com/senorspacecakes/p/Cs92QmqrkTt/).
+While visiting his profile, we discovered the flag in one of his [posts](https://www.instagram.com/senorspacecakes/p/Cs92QmqrkTt/).
 
-You can see it below, or simply use incognito mode to avoid logging in and still see his post.
+You can see it below, or simply use incognito mode to avoid logging in and still see his posts.
 
 ![insta-post](https://i.ibb.co/Pjd0DZ0/image.png)
 
-To read the flag, you need to reverse the image. I'm using Paint to flip the image, and you can view the result here:
+To read the flag, you have to flip the image. I use Paint to flip the image, and you can see the result here:
 
 ![reverse-flag](https://i.ibb.co/yVgjDcy/image.png)
 
@@ -407,8 +406,8 @@ $pdecrypted = Decrypt-String $pcrypted $pwd
 write-host "Decrypted Password is: $pdecrypted"  
 ```
 
-The provided PowerShell script apperars to be performing encryption and decryption of a password using Rijndael (AES) algorithm. 
-While analyzing this script, I discovered a hardcoded password within the TODO comment:
+The provided PowerShell script appears to encrypt and decrypt a password using the Rijndael (AES) algorithm. 
+While analysing this script, I discovered a hardcoded password in the TODO comment:
 
 ```
 #### 
@@ -417,7 +416,8 @@ While analyzing this script, I discovered a hardcoded password within the TODO c
 ### 
 ```
 
-To solve this challenge, instead of reading user input, we can assign the password to the variable. So, it will change from:
+To solve this challenge, instead of reading the user input, we can assign the password to the variable. 
+So, it will change from:
 `$pwd = read-host "(Case Sensitive) Please Enter User Password"`
 
 to
@@ -467,7 +467,7 @@ $pdecrypted = Decrypt-String $pcrypted $pwd
 write-host "Decrypted Password is: $pdecrypted"  
 ```
 
-Save the following code into a file, and execute the script in PowerShell using the command:
+Save the following code to a file, and run the script in PowerShell by using the command:
 
 `.\new.ps1`
 
@@ -486,7 +486,7 @@ The final flag is poctf{uwsp_4d_v1c70r14m_w4573l4nd3r}
 > ![GIF](https://pointeroverflowctf.com/stego1.gif)
 
 In this challenge, we were given with a `stego1.gif` file.
-Given the nature of Steganography challenges, I presume it involves concealing data within the file.
+Given the nature of steganography challenges, I assume it involves hiding data within the file.
 
 I used binwalk to solve this challenge.
 
@@ -500,13 +500,13 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 561779        0x89273         End of Zip archive, footer length: 22
 ```
 
-This revealed a zip file embedded within the gif file. 
+This revealed a zip file embedded in the gif file. 
 We discovered a flag.txt file when we extracted the data using binwalk. 
 Open it to reveal the flag.
 
 poctf{uwsp_h342d_y0u_7h3_f1257_71m3}
 
-As an alternative, we can also use the strings command:
+Alternatively, we can use the strings command:
 
 `strings stego1.gif | tail` 
 
@@ -526,7 +526,8 @@ When you visit the Web Challenge, the page will look like this:
 
 ![web-challenge](https://gcdnb.pbrd.co/images/Moq8oiFijCeK.png?o=1)
 
-To begin our investigation, we can analyse the source code by looking at the page source. Inside the script tag, we find a function as follows:
+To begin our investigation, we can analyse the source code by looking at the page source. 
+Inside the script tag we find a function that looks like this:
 
 ```
 <SCRIPT>
@@ -585,23 +586,23 @@ To begin our investigation, we can analyse the source code by looking at the pag
 </SCRIPT>
 ```
 
-The provided source code has an interesting function. 
-It's the Zuul function, which takes a parameter key and compares it with a value v. 
+The source code provided has an interesting function. 
+It's the Zuul function, which takes a parameter key and compares it to the value of the v variable. 
 If key is equal to v, it performs a series of operations to construct an array z, and then logs the elements of z that have been concatenated, separated by underscores. So it means that if key==v, then the flag will appear.
 
-We can print out the value using:
+We can print the value with:
 
 `console.log(v);`
 
 ![console-img](https://i.ibb.co/m9Lrs3j/image.png)
 
-If we execute it, it will gives us the value.
-We can copy the number and paste it. If we click Submit, When we clicked Submit, there was a flag in the Console tab, but it was very fast so it kind of went away. 
+If we execute it, it will give us the value.
+We can copy the number and paste it. When we click Submit, there was a flag in the Console tab, but it was very fast so it kind of went away. 
 
 ![gif-console](https://i.ibb.co/5BhwxWd/Animation.gif)
 
 In order to deal with this, instead of using the Submit button, we can take an additional step.
-We can call the Zuul function by passing the value of v (key). In the console, we can execute the following command:
+We can call the Zuul function by passing the value of v (key). In the console, we can run the following command:
 
 `Zuul(206204233);`
 
@@ -611,7 +612,7 @@ The result is:
 
 The final flag is: poctf{uwsp_1_4m_4ll_7h47_7h3r3_15_0f_7h3_m057_r34l}
 
-There's also an alternative way to obtain the flag. We just copy this Javascript code and run it:
+There's also an alternative way to get the flag. Just copy and run this Javascript code:
 
 ```
 var Gatekeeper = [];
@@ -639,7 +640,7 @@ z[10] = 'r' + '3' + z[2][0] + Gatekeeper[1][5] + '}';
 console.log(z.join("_"));
 ```
 
-This code is part of the Zuul function and essentially converts a specific hexadecimal string (Gatekeeper[0]) to ASCII characters, performs some mathematical and string operations, and then prints the result in a specific format.
+This code is part of the Zuul function and essentially converts a given hexadecimal string (Gatekeeper[0]) to ASCII characters, performs some mathematical and string operations, and then prints the result in a specific format.
 
 Here's what we get:
 

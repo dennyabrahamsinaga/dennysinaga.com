@@ -264,8 +264,8 @@ Untuk mengetahui UUID notes FLAG, kita dapat menggunakan Inspect Element untuk m
 ![inspect-flag-uuid](https://gcdnb.pbrd.co/images/zctg1hcRXiXI.png?o=1)
 
 Saya mengganti UUID notes TODO dengan UUID notes FLAG:
-- TODO Notes: http://178.128.113.198:1234/notes/bb06631b-9b72-424a-b8ec-fb815eb24a75
-- FLAG Notse: http://178.128.113.198:1234/notes/a6faca0d-7e51-4b02-834f-c7b11370056f
+- TODO Notes: `http://178.128.113.198:1234/notes/bb06631b-9b72-424a-b8ec-fb815eb24a75`
+- FLAG Notes: `http://178.128.113.198:1234/notes/a6faca0d-7e51-4b02-834f-c7b11370056f`
 
 Akhirnya, kita mendapatkan flag.
 

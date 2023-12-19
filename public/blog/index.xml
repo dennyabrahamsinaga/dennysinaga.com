@@ -5,7 +5,19 @@
     <link>www.dennysinaga.com/blog/</link>
     <description>Recent content in Blogs on nagabonor@denny</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 Dec 2023 09:45:04 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Dec 2023 11:34:01 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CTF] The Cyber Cooperative CTF 2023</title>
+      <link>www.dennysinaga.com/blog/the-cybercooperative-ctf-2023/</link>
+      <pubDate>Tue, 19 Dec 2023 11:34:01 +0700</pubDate>
+      
+      <guid>www.dennysinaga.com/blog/the-cybercooperative-ctf-2023/</guid>
+      <description>The Cyber Cooperative CTF 2023 Link: CTFtime.org
+reversing bunker  You reach a large metal door. It&amp;rsquo;s protected by large yellow bars. There appears to be an panel with a keypad&amp;hellip;
+ In this challenge, we are given Bunker.jar file. In order to open this file, I use jadx-gui.
+package defpackage; import java.awt.Component; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; import javax.swing.JButton; import javax.swing.JFrame; import javax.swing.JOptionPane; import javax.swing.JPanel; import javax.swing.JTextField; import javax.swing.UIManager; /* compiled from: bunker.</description>
+    </item>
+    
     <item>
       <title>[CTF] PatriotCTF 2023</title>
       <link>www.dennysinaga.com/blog/patriot-ctf-2023/</link>
@@ -13,9 +25,9 @@
       
       <guid>www.dennysinaga.com/blog/patriot-ctf-2023/</guid>
       <description>PatriotCTF - 2023 Link: CTFtime.org
-Crypto 1. Multi-numeral You are given a text file containing binary strings. You can use CyberChef to decode the strings:
+Crypto Multi-numeral You are given a text file containing binary strings. You can use CyberChef to decode the strings:
 flag: PCTF{w0w_s0_m4ny_number5}
-2. My phone! We were provided with an image file that appeared to contain an unusual cipher. To decrypt the message within the image, I utilized the Gravity Falls Bill Cipher tool.
+My phone! We were provided with an image file that appeared to contain an unusual cipher. To decrypt the message within the image, I utilized the Gravity Falls Bill Cipher tool.
 By decoding the message from the image, I obtained a result like this:</description>
     </item>
     

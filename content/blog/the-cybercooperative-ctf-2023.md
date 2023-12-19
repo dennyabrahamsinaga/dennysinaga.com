@@ -14,7 +14,7 @@ Link: [CTFtime.org](https://ctftime.org/event/2206)
 
 > You reach a large metal door. It's protected by large yellow bars. There appears to be an panel with a keypad...
 
-In this challenge, we are given Bunker.jar file. In order to open this file, I use jadx-gui.
+In this challenge, we were provided with the Bunker.jar file. To open this file, I utilized jadx-gui.
 
 ```
 package defpackage;
@@ -112,7 +112,7 @@ class Bunker extends JFrame implements ActionListener {
 The code above seems a simple interactive program where the users enters an 8-digit code, and if the code is correct, a decrypted message is displayed.
 The encryption is essentially a simple XOR operation between each character of the hardcoded encrypted string and the corresponding character of the user-entered code.
 
-I wrote solver to solve this challenge:
+I wrote a solver to solve this challenge:
 
 ```
 def solve_bunker_code(user_input):
@@ -144,7 +144,7 @@ The decrypted result: flag{bunker_11_says_await_further_instruction}
 
 > Can you make this program crash?
 
-"In this challenge, we were provided with a service accessible via the `nc` command at `0.cloud.chals.io` on port `17289`, along with the files `crashme` and `crashme.c`."
+In this challenge, we were provided with a service accessible via the `nc` command at `0.cloud.chals.io` on port `17289`, along with the files `crashme` and `crashme.c`.
 
 crashme.c:
 
@@ -169,7 +169,7 @@ Based on title's challenge, we could try make this program crash.
 To crash the program, you can provide more than 32 characters of input when prompted. Since the buffer is only 32 bytes, providing more data will overflow the buffer.
 
 For example, inputting 40 characters might look like this:
-![crashme-flag](https://pasteboard.co/BxAHd89v3GEE.png)
+![crashme-flag](https://gcdnb.pbrd.co/images/BxAHd89v3GEE.png?o=1)
 
 flag{segfaults_a_hackers_best_friend}
 
@@ -183,14 +183,14 @@ We were given the file `lost-at-sea.pcapng` to unravel this challenge.
 To solve this challenge, I used strings and grep commmands, executing the following:
 `strings lost-at-sea.pcapng | grep "flag"`
 
-![las-flag](https://pasteboard.co/rx11bRGH0V3Q.png)
+![las-flag](https://gcdnb.pbrd.co/images/rx11bRGH0V3Q.png)
 
 We can also analyze this file using Wireshark. 
 Upon opening the file, you will observe an HTTP request using utilizing the GET method. 
 
 `GET /flag%7Bb4by_5h4rk_do0_d0o_d00_d0o_d0o_1n_th3_s34%7D HTTP/1.1`
 
-![wireshark-img](https://pasteboard.co/17kLca80Seq3.png)
+![wireshark-img](https://gcdnb.pbrd.co/images/17kLca80Seq3.png?o=1)
 
 The path of the requested resource appears to be a flag, with `%7B` and `%7D` being URL-encoded characters representing `{` and `}` respectively.
 
@@ -272,7 +272,7 @@ Then, I am using strings command to inspect an image file for any suspicious dat
 
 `strings -n 10 -t x babyhide.jpeg | less`
 
-![strings-babyhide](https://pasteboard.co/TqtJcdOrwSZ4.png)
+![strings-babyhide](https://gcdnb.pbrd.co/images/TqtJcdOrwSZ4.png?o=1)
 
 Upon inspecting the image file, it's appear to be a snippet of PDF document's internal structure.
 Hence, we can use stegano tools to extract the PDF from this image file. We could utilize steghide/stegseek/binwalk.
@@ -280,11 +280,11 @@ In this case, I use binwalk to extract the hidden file.
 
 `binwalk -e babyhide.jpeg`
 
-![binwalk-result](https://pasteboard.co/CcuSrLHYhovs.png)
+![binwalk-result](https://gcdnb.pbrd.co/images/CcuSrLHYhovs.png?o=1)
 
 Opening the flag, we will get the flag:
 
-![babyhide-flag](https://pasteboard.co/Yq5risQBfq6p.png)
+![babyhide-flag](https://gcdnb.pbrd.co/images/Yq5risQBfq6p.png?o=1)
 
 flag{baby_come_back}
 

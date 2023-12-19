@@ -14,7 +14,7 @@
       <guid>www.dennysinaga.com/blog/the-cybercooperative-ctf-2023/</guid>
       <description>The Cyber Cooperative CTF 2023 Link: CTFtime.org
 reversing bunker  You reach a large metal door. It&amp;rsquo;s protected by large yellow bars. There appears to be an panel with a keypad&amp;hellip;
- In this challenge, we are given Bunker.jar file. In order to open this file, I use jadx-gui.
+ In this challenge, we were provided with the Bunker.jar file. To open this file, I utilized jadx-gui.
 package defpackage; import java.awt.Component; import java.awt.event.ActionEvent; import java.awt.event.ActionListener; import javax.swing.JButton; import javax.swing.JFrame; import javax.swing.JOptionPane; import javax.swing.JPanel; import javax.swing.JTextField; import javax.swing.UIManager; /* compiled from: bunker.</description>
     </item>
     

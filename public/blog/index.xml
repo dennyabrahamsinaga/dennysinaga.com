@@ -12,7 +12,7 @@
       <pubDate>Tue, 19 Dec 2023 09:45:04 +0700</pubDate>
       
       <guid>www.dennysinaga.com/blog/patriot-ctf-2023/</guid>
-      <description>PatriotCTF - 2023 URL: CTFtime.org
+      <description>PatriotCTF - 2023 Link: CTFtime.org
 Crypto 1. Multi-numeral You are given a text file containing binary strings. You can use CyberChef to decode the strings:
 flag: PCTF{w0w_s0_m4ny_number5}
 2. My phone! We were provided with an image file that appeared to contain an unusual cipher. To decrypt the message within the image, I utilized the Gravity Falls Bill Cipher tool.

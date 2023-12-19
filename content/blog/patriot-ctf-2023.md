@@ -1,7 +1,7 @@
 ---
 title: "Patriot Ctf 2023"
 date: 2023-12-19T09:45:04+07:00
-draft: true
+draft: false
 ---
 
 # PatriotCTF - 2023

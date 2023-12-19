@@ -5,7 +5,18 @@
     <link>www.dennysinaga.com/</link>
     <description>Recent content on nagabonor@denny</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 Dec 2023 14:28:17 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Dec 2023 19:50:12 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pointer Overflow CTF 2023</title>
+      <link>www.dennysinaga.com/blog/pointer-overflow-ctf-2023/</link>
+      <pubDate>Tue, 19 Dec 2023 19:50:12 +0700</pubDate>
+      
+      <guid>www.dennysinaga.com/blog/pointer-overflow-ctf-2023/</guid>
+      <description>UWSP Pointer Overflow CTF Crack The Gentle Rocking of the Sun  Here&amp;rsquo;s a password protected archive. Problem is that I seem to have forgotten das Passwort. All I have is this post-it note on my monitor that says &amp;ldquo;crack2 = 4bd939ed2e01ed1e8540ed137763d73cd8590323&amp;rdquo;
+ In this challenge, we were provided with crack2.7z file. You can download it here
+To solve this challenge, we should find the password of this archive file. In the description, it was said &amp;quot;crack2 = 4bd939ed2e01ed1e8540ed137763d73cd8590323&amp;quot;</description>
+    </item>
+    
     <item>
       <title>[CTF - Lokal] CTF SecureTheSystem 2023</title>
       <link>www.dennysinaga.com/blog/ctf-securethesystem-2023/</link>

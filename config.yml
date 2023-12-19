@@ -5,12 +5,17 @@ theme: PaperMod
 enableRobotsTXT: true
 enableEmoji: true
 
+minify:
+  disableXML: true
+  minifyOutput: true
+
 params:
   title: Denny Abraham Sinaga
   description: "i write random stuffs here, please read it"
   keywords: [Portfolio]
   author: Denny Abraham Sinaga
   ShowCodeCopyButtons: true
+  ShowToc: true
 
 # profile-mode
   profileMode:
@@ -23,9 +28,9 @@ params:
     imageTitle: Denny Abraham Sinaga
     buttons:
       - name: about
-        url: "/about"
+        url: "about"
       - name: blog
-        url: "/blog"
+        url: "blog"
   
   socialIcons:
     - name: linkedin

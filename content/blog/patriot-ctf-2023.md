@@ -10,7 +10,7 @@ Link: [CTFtime.org](https://ctftime.org/event/2030)
 
 ## Crypto
 
-### 1. Multi-numeral
+### Multi-numeral
 
 ![multi-numeral](https://raw.githubusercontent.com/dennyabrahamsinaga/ctf-writeup/main/PatriotCTF2023/Crypto/Multi-numeral/image.png)
 
@@ -21,7 +21,7 @@ You are given a text file containing binary strings. You can use CyberChef to de
 
 flag: PCTF{w0w_s0_m4ny_number5}
 
-### 2. My phone!
+### My phone!
 
 ![my-phone](https://raw.githubusercontent.com/dennyabrahamsinaga/ctf-writeup/main/PatriotCTF2023/Crypto/My%20phone!/image.png)
 
@@ -41,7 +41,7 @@ Since the flag format specified a city name, I determined that the flag was Dulu
 flag: PCTF{Duluth}
 
 
-### 3. ReReCaptcha
+### ReReCaptcha
 
 ![rerecaptcha](https://raw.githubusercontent.com/dennyabrahamsinaga/ctf-writeup/main/PatriotCTF2023/Crypto/ReReCaptcha/image.png)
 

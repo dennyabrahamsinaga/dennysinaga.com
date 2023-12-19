@@ -4,7 +4,7 @@ date: 2023-06-11T20:27:33+07:00
 draft: false
 ---
 
-Hello everyone! I'm Denny Abraham Sinagal, a recent graduate from Del Institute of Technology. 
+Hello everyone! I'm Denny Abraham Sinaga, a recent graduate from Del Institute of Technology. 
 During university, I worked as a Penetration Tester, diving into cybersecurity. 
 In 2023, I embarked on Capture The Flag (CTF) adventures, earning a CEH certification this year, solidifying my commitment to cybersecurity.
 

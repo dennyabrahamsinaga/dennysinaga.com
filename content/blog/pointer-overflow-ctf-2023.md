@@ -588,7 +588,7 @@ Inside the script tag we find a function that looks like this:
 
 The source code provided has an interesting function. 
 It's the Zuul function, which takes a parameter key and compares it to the value of the v variable. 
-If key is equal to v, it performs a series of operations to construct an array z, and then logs the elements of z that have been concatenated, separated by underscores. So it means that if key==v, then the flag will appear.
+If key is equal to v, it performs a series of operations to construct an array z, and then logs the elements of z that have been concatenated, separated by underscores. So it means that if `key==v`, then the flag will appear.
 
 We can print the value with:
 
@@ -640,7 +640,7 @@ z[10] = 'r' + '3' + z[2][0] + Gatekeeper[1][5] + '}';
 console.log(z.join("_"));
 ```
 
-This code is part of the Zuul function and essentially converts a given hexadecimal string (Gatekeeper[0]) to ASCII characters, performs some mathematical and string operations, and then prints the result in a specific format.
+This code is part of the Zuul function and essentially converts a given hexadecimal string `(Gatekeeper[0])` to ASCII characters, performs some mathematical and string operations, and then prints the result in a specific format.
 
 Here's what we get:
 

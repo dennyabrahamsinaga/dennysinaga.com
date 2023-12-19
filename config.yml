@@ -10,6 +10,7 @@ params:
   description: "i write random stuffs here, please read it"
   keywords: [Portfolio]
   author: Denny Abraham Sinaga
+  ShowCodeCopyButtons: true
 
 # profile-mode
   profileMode:

@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Denny Abraham Sinaga</title>
+    <title>nagabonor@denny</title>
     <link>www.dennysinaga.com/</link>
-    <description>Recent content on Blog - Denny Abraham Sinaga</description>
+    <description>Recent content on nagabonor@denny</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 09 Jun 2023 11:53:31 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Dec 2023 09:45:04 +0700</lastBuildDate><atom:link href="www.dennysinaga.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CTF] PatriotCTF 2023</title>
+      <link>www.dennysinaga.com/blog/patriot-ctf-2023/</link>
+      <pubDate>Tue, 19 Dec 2023 09:45:04 +0700</pubDate>
+      
+      <guid>www.dennysinaga.com/blog/patriot-ctf-2023/</guid>
+      <description>PatriotCTF - 2023 URL: CTFtime.org
+Crypto 1. Multi-numeral You are given a text file containing binary strings. You can use CyberChef to decode the strings:
+flag: PCTF{w0w_s0_m4ny_number5}
+2. My phone! We were provided with an image file that appeared to contain an unusual cipher. To decrypt the message within the image, I utilized the Gravity Falls Bill Cipher tool.
+By decoding the message from the image, I obtained a result like this:</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>www.dennysinaga.com/about/</link>
+      <pubDate>Sun, 11 Jun 2023 20:27:33 +0700</pubDate>
+      
+      <guid>www.dennysinaga.com/about/</guid>
+      <description>Denny is a reliable and conscientious individual who has graduated with a major in Software Engineering Technology. He is passionate about continuously enhancing his technical and interpersonal skills. Denny has a particular interest in Web and Mobile Penetration Testing and has actively sought opportunities to expand his knowledge and hands-on experience in the field of cybersecurity, including participation in Capture The Flag (CTF) competitions.
+You can check my projects on Github.</description>
+    </item>
+    
     <item>
       <title>Draft</title>
       <link>www.dennysinaga.com/achievement/draft/</link>

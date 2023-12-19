@@ -27,8 +27,8 @@ params:
     imageHeight: 200
     imageTitle: Denny Abraham Sinaga
     buttons:
-      - name: about
-        url: "about"
+      - name: whoami
+        url: "whoami"
       - name: blog
         url: "blog"
   

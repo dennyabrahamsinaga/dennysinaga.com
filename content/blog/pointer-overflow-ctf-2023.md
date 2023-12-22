@@ -2,6 +2,7 @@
 title: "[CTF] Pointer Overflow CTF 2023"
 date: 2023-12-19T19:50:12+07:00
 draft: false
+disableShare: false
 ---
 
 # UWSP Pointer Overflow CTF

@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "$whoami"
 date: 2023-06-11T20:27:33+07:00
 draft: false
 ---

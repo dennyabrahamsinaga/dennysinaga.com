@@ -179,11 +179,11 @@ Of these buckets, the `flag-images` seem to be the most interesting. Now we can 
 
 `gsutil -m cp -r gs://flag-images .`
 
-This command copies an entire directory tree and performs a parallel multi-threaded/multi-processing copy to our current directory using [the top-level `gsutil -m` option]((https://cloud.google.com/storage/docs/gsutil/commands/cp)).
+This command copies an entire directory tree and performs a parallel multi-threaded/multi-processing copy to our current directory using [the top-level gsutil -m option]((https://cloud.google.com/storage/docs/gsutil/commands/cp)).
 
 ![result-copy](https://i.ibb.co/7QNL6gR/image.png)
 
-If we open each file, we can see that the flag is in xa.png.
+If we open each file, we can see that the flag is in `xa.png`.
 
 ![flag-oob-2](https://i.ibb.co/kXmrkQ3/image.png)
 

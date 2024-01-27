@@ -1,7 +1,7 @@
 ---
 title: "[CTF] UofTCTF 2024"
 date: 2024-01-26T20:14:12+07:00
-draft: true
+draft: false
 ---
 
 # UofTCTF 2024
